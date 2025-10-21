@@ -1,6 +1,11 @@
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
+import Beranda from "./pages/Beranda";
+import Anime from "./pages/Anime";
+import Manga from "./pages/Manga";
+import Komunitas from "./pages/Komunitas";
 
 const banners = [
   { image: "/banners/banner1.jpg", link: "https://example.com/1", alt: "Banner 1" },
@@ -20,16 +25,18 @@ const banners = [
 function App() {
 
   return (
-    <>
+    <Router>
       <Navbar />
       {/* Banner carousel */}
       <Banner banners={banners} />
 
-      <main>
-        <h1>Konten utama website</h1>
-        <p>Ini halaman demo.</p>
-      </main>
-    </>
+      <Routes>
+        <Route path="/" element={<Beranda />} />
+        <Route path="/anime" element={<Anime />} />
+        <Route path="/manga" element={<Manga />} />
+        <Route path="/komunitas" element={<Komunitas />} />
+      </Routes>
+    </Router>
   )
 }
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import "../assets/styles/Navbar.css";
 import Logo from "../assets/images/logo.png";
@@ -26,10 +27,34 @@ export default function Navbar() {
 
                 {/* Desktop / Mobile Menu */}
                 <nav className={`nav-links ${isOpen ? "open" : ""}`}>
-                    <a href="#" onClick={() => setIsOpen(false)}>Beranda</a>
-                    <a href="#" onClick={() => setIsOpen(false)}>Anime</a>
-                    <a href="#" onClick={() => setIsOpen(false)}>Manga</a>
-                    <a href="#" onClick={() => setIsOpen(false)}>Komunitas</a>
+                    <NavLink
+                        to="/"
+                        className={({ isActive }) => isActive ? "link active" : "link"}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Beranda
+                    </NavLink>
+                    <NavLink
+                        to="/anime"
+                        className={({ isActive }) => isActive ? "link active" : "link"}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Anime
+                    </NavLink>
+                    <NavLink
+                        to="/manga"
+                        className={({ isActive }) => isActive ? "link active" : "link"}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Manga
+                    </NavLink>
+                    <NavLink
+                        to="/komunitas"
+                        className={({ isActive }) => isActive ? "link active" : "link"}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        Komunitas
+                    </NavLink>
                 </nav>
 
                 {/* Wrapper untuk tombol Login + Hamburger */}

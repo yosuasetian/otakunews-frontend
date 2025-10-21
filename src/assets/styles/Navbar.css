@@ -20,19 +20,14 @@
 
 /* === LOGO === */
 .nav-logo {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 .logo-img {
     width: 36px;
-    /* ukuran logo presisi */
     height: 36px;
     object-fit: contain;
 }
@@ -41,6 +36,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text);
+    transition: color 0.3s ease;
 }
 
 .nav-logo:hover .logo-text {
@@ -55,7 +51,7 @@
     transition: all 0.3s ease;
 }
 
-.nav-links a {
+.nav-links .link {
     text-decoration: none;
     color: var(--text);
     font-size: 0.95rem;
@@ -64,7 +60,7 @@
     transition: color 0.2s ease;
 }
 
-.nav-links a::after {
+.nav-links .link::after {
     content: "";
     position: absolute;
     width: 0%;
@@ -75,12 +71,18 @@
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links .link:hover {
     color: var(--primary);
 }
 
-.nav-links a:hover::after {
+.nav-links .link:hover::after,
+.nav-links .link.active::after {
     width: 100%;
+}
+
+.nav-links .link.active {
+    color: var(--primary);
+    font-weight: 600;
 }
 
 /* === LOGIN BUTTON === */
