@@ -1,0 +1,48 @@
+/* === FONT GLOBAL === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === ROOT COLORS (Light Mode Default) === */
+:root {
+    /* Backgrounds */
+    --bg: #f9fafb;
+    --surface: #ffffff;
+
+    /* Text */
+    --text: #222222;
+    --text-secondary: #555555;
+
+    /* Primary colors */
+    --primary: #0077ff;
+    --primary-hover: #005fcc;
+
+    /* Borders / Shadows */
+    --border: #e5e7eb;
+    --shadow: rgba(0, 0, 0, 0.05);
+
+    /* Humberger */
+    --humberger: #222222;
+}
+
+/* === DARK MODE BASED ON SYSTEM === */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121212;
+        --surface: #1e1e1e;
+        --text: #f5f5f5;
+        --text-secondary: #cccccc;
+        --primary: #3399ff;
+        --primary-hover: #66b2ff;
+        --border: #2c2c2c;
+        --shadow: rgba(0, 0, 0, 0.7);
+        --humberger: #f5f5f5;
+    }
+}
