@@ -19,13 +19,11 @@ export default function Navbar() {
     return (
         <header className="navbar">
             <div className="nav-container">
-                {/* Logo */}
                 <div className="nav-logo">
                     <img src={Logo} alt="Logo" className="logo-img" />
                     <span className="logo-text">TAKUNEWS</span>
                 </div>
 
-                {/* Desktop / Mobile Menu */}
                 <nav className={`nav-links ${isOpen ? "open" : ""}`}>
                     <NavLink
                         to="/"

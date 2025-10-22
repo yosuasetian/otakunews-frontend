@@ -13,9 +13,7 @@
 
 .carousel-item {
     flex: 0 0 auto;
-    /* pastikan item tidak shrink */
     width: 200px;
-    /* ukuran banner, bisa disesuaikan */
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -28,13 +26,11 @@
     object-fit: cover;
 }
 
-/* Hover efek */
 .carousel-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Scrollbar hidden untuk modern look */
 .carousel-wrapper::-webkit-scrollbar {
     height: 8px;
 }
@@ -44,7 +40,6 @@
     border-radius: 4px;
 }
 
-/* Dark mode support */
 @media (prefers-color-scheme: dark) {
     .carousel-item:hover {
         box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
@@ -55,7 +50,6 @@
     }
 }
 
-/* Responsive mobile */
 @media (max-width: 768px) {
     .carousel-item {
         width: 140px;

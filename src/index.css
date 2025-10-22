@@ -1,6 +1,12 @@
-/* === FONT GLOBAL === */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -10,29 +16,18 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* === ROOT COLORS (Light Mode Default) === */
 :root {
-    /* Backgrounds */
     --bg: #f9fafb;
     --surface: #ffffff;
-
-    /* Text */
     --text: #222222;
     --text-secondary: #555555;
-
-    /* Primary colors */
     --primary: #0077ff;
     --primary-hover: #005fcc;
-
-    /* Borders / Shadows */
     --border: #e5e7eb;
     --shadow: rgba(0, 0, 0, 0.05);
-
-    /* Humberger */
     --humberger: #222222;
 }
 
-/* === DARK MODE BASED ON SYSTEM === */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #121212;
@@ -44,5 +39,47 @@ body {
         --border: #2c2c2c;
         --shadow: rgba(0, 0, 0, 0.7);
         --humberger: #f5f5f5;
+    }
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section {
+    background-color: var(--surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section h1,
+.section h2,
+.section h3 {
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.section p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 1rem;
+        margin: 1.5rem auto;
+        gap: 1.5rem;
+    }
+
+    .section {
+        padding: 1rem;
     }
 }
